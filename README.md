@@ -5,6 +5,7 @@ The purpose of this code is to establish persistance using WMI, while avoiding d
 This is accomplished by creating an arbitrary namespace and placing the permanent event subscription which will effect persistance inside.
 
 The technique used was originally discoverd by Matt Graeber and Lee Christenson, and [published here](https://specterops.io/assets/resources/Subverting_Sysmon.pdf)
+
 ---
 
 ## Usage
