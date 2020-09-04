@@ -14,4 +14,13 @@ Currently the event subscription will just launch calc as a child process of scr
 
 - Change the vbscript to something usefull.
 - Change the WQL filter to something practical.
+- You'll probably want to remove the console printing
 - Compile, and run as admin.
+
+## ToDo
+
+- Check for the existance of a namespace with the same name before I try to create one
+- Check for permanent event subscription componants with the same names before I try to create new ones
+- Make ActiveScriptConsumer class creation an indpendant function
+- Make function(s) to create other event consumers
+- Store the vbscript in a way that is not human readable
