@@ -1,6 +1,6 @@
-## Function
+## Purpose
 
-The purpose of this code is to establish persistance using WMI, while avoiding detection from Sysmon and Windows Security event logs. 
+This tool creates WMI permanent event subscriptions to establish persistance, while avoiding detection from Sysmon and Windows Security event logs. 
 
 This is accomplished by creating an arbitrary namespace and placing the permanent event subscription which will effect persistance inside.
 
