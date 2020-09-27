@@ -24,3 +24,4 @@ Currently the event subscription will just launch calc as a child process of scr
 - Make ActiveScriptConsumer class creation an indpendant function</strike>
 - Make function(s) to derive other event consumers
 - Store the vbscript in a way that is not human readable
+- Add lateral movement capabilities
