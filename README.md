@@ -1,6 +1,6 @@
 ## Purpose
 
-This tool creates a/n WMI permanent event subscription to establish persistance, while avoiding detection from Sysmon and Windows Security event logs. 
+This tool creates a WMI permanent event subscription to establish persistance, while avoiding detection from Sysmon and Windows Security event logs. 
 
 This is accomplished by creating an arbitrary namespace and placing the permanent event subscription which will effect persistance inside.
 
